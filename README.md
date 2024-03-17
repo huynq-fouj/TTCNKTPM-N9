@@ -1,17 +1,18 @@
-### Frontend
-
+## Frontend
 ```cmd
 > cd frontend
 > npm install
 > npm start
 ```
+---
 
-### Backend
+## Backend
 
 ```cmd
 > cd backend
 ```
-
-### Database
-
+---
+## Database
 MySQL
+
+---
