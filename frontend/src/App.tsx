@@ -1,22 +1,27 @@
-import toast, { Toaster } from "react-hot-toast"
-import Login from "./pages/auth/Login"
-import Register from "./pages/auth/Register"
+import { Toaster } from "react-hot-toast"
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import CustomerLayout from "./layouts/CustomerLayout";
+import Home from "./pages/customer/Home";
+import Movies from "./pages/customer/Movies";
+import AdminLayout from "./layouts/AdminLayout";
+import Dashboard from "./pages/admin/Dashboard";
 
 function App() {
-
-  const notify = () => toast("This is your toast", {
-    icon: '🐳'
-  });
 
   return (
     <>
       <Toaster position="top-center" reverseOrder={false}/>
-      <div className="p-5">
-        <Login/>
-        <span className="mx-1"></span>
-        <Register/>
-        <button className="btn btn-secondary ms-2" onClick={notify}>Show toast</button>
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<CustomerLayout/>}>
+            <Route index element={<Home/>}/>
+            <Route path="/phim" element={<Movies/>}/>
+          </Route>
+          <Route path="/admin" element={<AdminLayout/>}>
+            <Route index element={<Dashboard/>}/>
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
