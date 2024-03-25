@@ -1,0 +1,22 @@
+{"properties": [
+  {
+    "name": "app.client.url",
+    "type": "java.lang.String",
+    "description": "A description for 'app.client.url'"
+  },
+  {
+    "name": "jwt.access.expire",
+    "type": "java.lang.String",
+    "description": "A description for 'jwt.access.expire'"
+  },
+  {
+    "name": "jwt.refresh.expire",
+    "type": "java.lang.String",
+    "description": "A description for 'jwt.refresh.expire'"
+  },
+  {
+    "name": "jwt.secret.key",
+    "type": "java.lang.String",
+    "description": "A description for 'jwt.secret.key'"
+  }
+]}
