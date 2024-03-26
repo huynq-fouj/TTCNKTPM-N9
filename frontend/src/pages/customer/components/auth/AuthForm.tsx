@@ -5,6 +5,8 @@ export default function AuthForm() {
     const [variant, setVariant] = useState<string>('LOGIN');
     const [isLoading, setIsLoading] = useState<boolean>(false);
 
+
+
     const toggleVariant = useCallback(() => {
         setVariant(prev => prev === 'LOGIN' ? 'REGISTER' : 'LOGIN');
     }, [variant]);
@@ -12,7 +14,7 @@ export default function AuthForm() {
 
     return (
         <>
-            <h2>Login and register</h2>
+            <h2>{ variant } form</h2>
         </>
     )
 }

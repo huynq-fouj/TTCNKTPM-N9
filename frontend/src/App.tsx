@@ -7,6 +7,7 @@ import AdminLayout from "./pages/admin/layouts/AdminLayout";
 import Dashboard from "./pages/admin/Dashboard";
 import Member from "./pages/customer/Member";
 import MovieDetails from "./pages/customer/movie/MovieDetails";
+import Auth from "./pages/customer/Auth";
 
 function App() {
 
@@ -19,14 +20,17 @@ function App() {
           <Route path="/" element={<CustomerLayout/>}>
             <Route index element={<Home/>}/>
             <Route path="/phim" element={<Movies/>}/>
-            <Route path="/chi-tiet-phim/:id" element={<MovieDetails/>}/>
+            <Route path="/chi-tiet-phim/:movieId" element={<MovieDetails/>}/>
             <Route path="/thanh-vien" element={<Member/>}/>
+            <Route path="/login" element={<Auth/>}/>
           </Route>
         </Routes>
         {/* Admin routes */}
         <Routes>
           <Route path="/admin" element={<AdminLayout/>}>
             <Route index element={<Dashboard/>}/>
+            <Route path="/admin/movies" element={<Movies/>}/>
+            <Route path="/admin/users" element={<Movies/>}/>
           </Route>
         </Routes>
       </BrowserRouter>

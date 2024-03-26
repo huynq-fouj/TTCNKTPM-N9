@@ -1,19 +1,21 @@
-import { useEffect, useState } from "react"
-import StorageService from "../../shared/services/StorageService";
-import MemberDetails from "./components/MemberDetails";
-import AuthForm from "./components/auth/AuthForm";
+import { useNavigate } from "react-router-dom";
+import StorageService from "../../shared/services/StorageService"
+import { useEffect } from "react";
+
 
 export default function Member() {
 
-    const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+    const isLogin = StorageService.isLoggedIn();
+    const user = StorageService.getUser();
+    const navigate = useNavigate();
 
     useEffect(() => {
-        setIsLoggedIn(StorageService.isLoggedIn());
+        if(!isLogin || user == null) navigate('/login');
     }, []);
 
     return (
         <>
-            {isLoggedIn ? <MemberDetails/> : <AuthForm/>}
+            Member
         </>
     )
 }
