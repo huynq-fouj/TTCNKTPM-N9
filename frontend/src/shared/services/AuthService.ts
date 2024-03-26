@@ -5,12 +5,12 @@ class AuthService {
 
     apiUrl = `${API_URL}/auth`;
 
-    login(authRequest: any): Promise<AxiosResponse<any, any>> {
-        return axios.post(`${this.apiUrl}/login`, authRequest);
+    login(data: LoginRequet): Promise<AxiosResponse<any, any>> {
+        return axios.post(`${this.apiUrl}/login`, data);
     }
 
-    register(authRequest: any): Promise<AxiosResponse<any, any>> {
-        return axios.post(`${this.apiUrl}/signup`, authRequest);
+    register(data: SignupRequest): Promise<AxiosResponse<any, any>> {
+        return axios.post(`${this.apiUrl}/signup`, data);
     }
 
     refreshToken(data: any): Promise<AxiosResponse<any, any>> {
