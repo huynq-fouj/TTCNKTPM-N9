@@ -13,6 +13,10 @@ class AuthService {
         return axios.post(`${this.apiUrl}/signup`, authRequest);
     }
 
+    refreshToken(data: any): Promise<AxiosResponse<any, any>> {
+        return axios.post(`${this.apiUrl}/refresh-token`, data);
+    }
+
 }
 
 export default new AuthService();

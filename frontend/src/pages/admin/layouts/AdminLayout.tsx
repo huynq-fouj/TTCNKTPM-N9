@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
-import Footer from "./admin/Footer";
-import Header from "./admin/Header";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 export default function AdminLayout() {
 
