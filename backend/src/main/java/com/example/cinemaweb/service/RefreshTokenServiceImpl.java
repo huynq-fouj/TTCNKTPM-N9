@@ -35,7 +35,7 @@ public class RefreshTokenServiceImpl implements RefreshTokenService {
 
     public RefreshToken createdRefreshToken(String username) {
         RefreshToken refreshToken = new RefreshToken();
-        refreshToken.setUser(userRepository.findFirstByEmailOrUsername(username).get());
+        refreshToken.setUser(userRepository.findFirstByEmail(username).get());
         refreshToken.setExpriedTime(new Date(System.currentTimeMillis() + refreshTokenExpire));
         refreshToken.setToken(jwtUtil.generateRefreshToken(username));
         refreshToken = refreshTokenRepository.save(refreshToken);
