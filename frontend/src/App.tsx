@@ -8,6 +8,7 @@ import Dashboard from "./pages/admin/Dashboard";
 import Member from "./pages/customer/Member";
 import MovieDetails from "./pages/customer/movie/MovieDetails";
 import Auth from "./pages/customer/Auth";
+import NotFound from "./pages/NotFound";
 
 function App() {
 
@@ -15,8 +16,8 @@ function App() {
     <>
       <Toaster position="top-center" reverseOrder={false}/>
       <BrowserRouter>
-        {/* Customer Routes */}
         <Routes>
+          {/* Customer Routes */}
           <Route path="/" element={<CustomerLayout/>}>
             <Route index element={<Home/>}/>
             <Route path="/phim" element={<Movies/>}/>
@@ -24,14 +25,14 @@ function App() {
             <Route path="/thanh-vien" element={<Member/>}/>
             <Route path="/login" element={<Auth/>}/>
           </Route>
-        </Routes>
-        {/* Admin routes */}
-        <Routes>
-          <Route path="/admin" element={<AdminLayout/>}>
-            <Route index element={<Dashboard/>}/>
+          {/* Admin Routes */}
+          <Route path="/" element={<AdminLayout/>}>
+            <Route path="/admin" element={<Dashboard/>}/>
             <Route path="/admin/movies" element={<Movies/>}/>
             <Route path="/admin/users" element={<Movies/>}/>
           </Route>
+          {/* Not found */}
+          <Route path="*" element={<NotFound />}/>
         </Routes>
       </BrowserRouter>
     </>

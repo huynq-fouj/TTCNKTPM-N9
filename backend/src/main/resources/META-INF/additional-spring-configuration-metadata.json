@@ -6,12 +6,12 @@
   },
   {
     "name": "jwt.access.expire",
-    "type": "java.lang.String",
+    "type": "java.lang.Long",
     "description": "A description for 'jwt.access.expire'"
   },
   {
     "name": "jwt.refresh.expire",
-    "type": "java.lang.String",
+    "type": "java.lang.Long",
     "description": "A description for 'jwt.refresh.expire'"
   },
   {

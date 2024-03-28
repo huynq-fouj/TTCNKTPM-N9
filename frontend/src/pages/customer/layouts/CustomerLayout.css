@@ -1,0 +1,23 @@
+.scroll-to-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 1px solid #000;
+    font-size: 1.5rem;
+    z-index: 9999;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    pointer-events: none;
+    opacity: 0;  
+}
+
+.scroll-to-top.active {
+    pointer-events: all;
+    opacity: 100;
+}

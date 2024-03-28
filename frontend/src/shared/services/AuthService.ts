@@ -1,15 +1,15 @@
 import axios, { AxiosResponse } from "axios";
-import { API_URL } from "../../api_url";
+import { environment } from "../../environments/environment";
 
 class AuthService {
 
-    apiUrl = `${API_URL}/auth`;
+    apiUrl = `${environment.apiUrl}/auth`;
 
     login(data: AuthRequest): Promise<AxiosResponse<any, any>> {
         return axios.post(`${this.apiUrl}/login`, data);
     }
 
-    register(data: AuthRequest): Promise<AxiosResponse<any, any>> {
+    signup(data: AuthRequest): Promise<AxiosResponse<any, any>> {
         return axios.post(`${this.apiUrl}/signup`, data);
     }
 
